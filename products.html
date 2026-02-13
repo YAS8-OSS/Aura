@@ -1,22 +1,177 @@
-<section class="assets-gallery">
-    <h2 class="section-title">مجموعة أورا المختارة</h2>
-    <div class="products-grid">
-        <div class="product-card">
-            <div class="image-container">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000" alt="Luxury Headphone">
-            </div>
-            <h3>سماعة أورا اللاسلكية</h3>
-            <p>صوت نقي، تصميم مخملي</p>
-            <span class="price">2,499 ريال</span>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منتجات AURA | الفخامة التقنية</title>
+    <style>
+        :root {
+            --gold: #d4af37;
+            --black: #050505;
+            --card-bg: #0f0f0f;
+        }
+
+        body {
+            background-color: var(--black);
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0; padding: 0;
+        }
+
+        .container { max-width: 1200px; margin: auto; padding: 20px; }
+
+        /* --- الأقسام (Categories) --- */
+        .categories-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .cat-btn {
+            background: transparent;
+            border: 1px solid #333;
+            color: #888;
+            padding: 8px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .cat-btn:hover, .cat-btn.active {
+            border-color: var(--gold);
+            color: var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        /* --- شبكة المنتجات --- */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-item {
+            background: var(--card-bg);
+            border: 1px solid #1a1a1a;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.4s;
+            position: relative;
+        }
+
+        .product-item:hover {
+            border-color: var(--gold);
+            transform: translateY(-8px);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain; /* جودة عالية بدون تمدد */
+            margin-bottom: 20px;
+        }
+
+        .product-item .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--gold);
+            color: #000;
+            font-size: 0.7rem;
+            padding: 3px 10px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .product-item h3 {
+            font-size: 1.1rem;
+            margin: 10px 0;
+            font-weight: 400;
+        }
+
+        .product-item .price {
+            color: var(--gold);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .buy-btn {
+            background: var(--gold);
+            color: #000;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            background: #b8962d;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .section-header h1 {
+            color: var(--gold);
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="section-header">
+            <h1>جميع المنتجات</h1>
         </div>
 
-        <div class="product-card">
-            <div class="image-container">
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000" alt="Luxury Watch">
-            </div>
-            <h3>ساعة أورا الذكية</h3>
-            <p>الأناقة في كل ثانية</p>
-            <span class="price">3,199 ريال</span>
+        <div class="categories-nav">
+            <button class="cat-btn active">الكل</button>
+            <button class="cat-btn">سماعات</button>
+            <button class="cat-btn">ساعات ذكية</button>
+            <button class="cat-btn">هواتف</button>
+            <button class="cat-btn">إكسسوارات</button>
         </div>
+
+        <div class="products-grid">
+            
+            <div class="product-item">
+                <span class="badge">جديد</span>
+                <img src="https://i.ibb.co/DP9nGmzY/image.jpg" alt="AURA Audio">
+                <h3>طقم أورا السيجنتشر</h3>
+                <span class="price">2,850 ر.س</span>
+                <button class="buy-btn">أضف إلى السلة</button>
+            </div>
+
+            <div class="product-item">
+                <span class="badge">جديد</span>
+                <img src="https://i.ibb.co/r2Lf2bzp/image.jpg" alt="AURA Watch">
+                <h3>ساعة أورا الذكية - V1</h3>
+                <span class="price">1,950 ر.س</span>
+                <button class="buy-btn">أضف إلى السلة</button>
+            </div>
+
+            <div class="product-item">
+                <img src="https://i.ibb.co/RGwB6c6n/image.jpg" alt="AURA Phone">
+                <h3>هاتف أورا ألفا</h3>
+                <span class="price">5,400 ر.س</span>
+                <button class="buy-btn">أضف إلى السلة</button>
+            </div>
+
+            </div>
     </div>
-</section>
+
+</body>
+</html>
