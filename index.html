@@ -3,120 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA | فخامة التقنية</title>
+    <title>AURA | التقنية بفخامة</title>
     <style>
-        /* التنسيق الأساسي للمتجر */
+        :root {
+            --gold: #d4af37;
+            --black: #050505;
+            --dark-grey: #0f0f0f;
+        }
+
         body {
-            background-color: #050505; /* الأسود الفخم */
+            background-color: var(--black);
             color: #ffffff;
             font-family: 'Segoe UI', sans-serif;
             margin: 0; padding: 0;
+            overflow-x: hidden;
         }
 
-        /* تصغير عنوان القسم ليكون أكثر رقي */
-        .section-title {
-            text-align: center;
-            color: #d4af37;
+        /* --- Navbar --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(0,0,0,0.9);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--gold); letter-spacing: 2px; }
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav ul li { cursor: pointer; font-size: 0.9rem; transition: 0.3s; }
+        nav ul li:hover { color: var(--gold); }
+        .nav-icons { display: flex; gap: 15px; cursor: pointer; }
+
+        /* --- Hero Section --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 60px 5%;
+            min-height: 80vh;
+        }
+        .hero-content { max-width: 40%; }
+        .hero-content h1 { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
+        .hero-image-container img {
+            max-width: 500px;
+            filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.2));
+            object-fit: contain;
+        }
+
+        /* --- الاصدارات الحصرية (شريط متحرك) --- */
+        .exclusive-section { padding: 40px 5%; }
+        .exclusive-title { 
+            color: var(--gold); 
             font-size: 1.1rem; 
-            letter-spacing: 3px;
-            margin: 50px 0 30px;
-            text-transform: uppercase;
-            font-weight: 300;
+            margin-bottom: 30px; 
+            text-align: center; 
+            letter-spacing: 2px;
         }
 
-        .container { max-width: 1200px; margin: auto; padding: 20px; }
-
-        /* تنظيم شبكة المنتجات */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 25px;
+            padding-bottom: 20px;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none; /* Hide scrollbar IE */
+            scrollbar-width: none; /* Hide scrollbar Firefox */
         }
+        .scroll-container::-webkit-scrollbar { display: none; } /* Hide scrollbar Chrome */
 
         .product-card {
-            background: #0f0f0f;
-            border: 1px solid #1a1a1a;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: 0.4s;
+            min-width: 300px;
+            background: var(--dark-grey);
+            border-radius: 15px;
+            padding: 20px;
             text-align: center;
             position: relative;
-        }
-
-        .product-card:hover {
-            border-color: #d4af37;
-            transform: translateY(-5px);
-        }
-
-        /* تحسين عرض الصور لمنع التمدد والحفاظ على الجودة */
-        .product-card img {
-            width: 100%;
-            height: 300px;
-            object-fit: contain; 
-            background: #000;
-        }
-
-        .product-info { padding: 20px; }
-        .product-info h3 { font-size: 1rem; margin: 10px 0; color: #fff; }
-        .price { color: #d4af37; font-size: 1.2rem; display: block; margin-bottom: 15px; }
-
-        .gold-btn {
-            background: transparent;
-            border: 1px solid #d4af37;
-            color: #d4af37;
-            padding: 10px;
-            cursor: pointer;
-            width: 100%;
-            font-weight: bold;
+            border: 1px solid #1a1a1a;
             transition: 0.3s;
         }
-
-        .gold-btn:hover {
-            background: #d4af37;
-            color: #000;
+        .product-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        
+        /* تحسين جودة الصور */
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain; /* يحافظ على الحدة والجودة */
+            margin-bottom: 15px;
         }
 
         .badge {
             position: absolute;
             top: 15px;
             right: 15px;
-            background: #d4af37;
-            color: #000;
-            padding: 3px 10px;
+            background: var(--gold);
+            color: black;
+            padding: 2px 12px;
             font-size: 0.7rem;
             font-weight: bold;
+            border-radius: 5px;
         }
+
+        .price { color: var(--gold); display: block; margin: 10px 0; font-weight: bold; }
+
+        /* --- Buttons --- */
+        .gold-btn {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 10px 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+        .gold-btn:hover { background: var(--gold); color: black; }
+
+        .container { max-width: 1200px; margin: auto; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h2 class="section-title">الإصدارات الحصرية</h2>
-        
-        <div class="product-grid">
+    <nav>
+        <div class="logo">AURA</div>
+        <ul>
+            <li>الرئيسية</li>
+            <li>المنتجات</li>
+            <li>المجموعات</li>
+            <li>عن AURA</li>
+            <li>الدعم</li>
+        </ul>
+        <div class="nav-icons">
+            <span>🔍</span>
+            <span>🛒</span>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-image-container">
+            <img src="https://i.ibb.co/RGwB6c6n/image.jpg" alt="AURA Main" class="main-hero-img">
+        </div>
+        <div class="hero-content">
+            <h1>حيث تلتقي التقنية بالأناقة</h1>
+            <p>اكتشف الجيل الجديد من الأجهزة الإلكترونية المصممة لتعكس ذوقك الرفيع.</p>
+            <button class="gold-btn">تسوق المجموعة الآن</button>
+        </div>
+    </section>
+
+    <section class="exclusive-section container">
+        <h2 class="exclusive-title">الإصدارات الحصرية</h2>
+        <div class="scroll-container">
             
             <div class="product-card">
-                <div class="badge">الأكثر مبيعاً</div>
-                <img src="https://i.ibb.co/DP9nGmzY/image.jpg" alt="AURA Headphones">
-                <div class="product-info">
-                    <h3>طقم أورا السيجنتشر (سماعات)</h3>
-                    <span class="price">2,850 ر.س</span>
-                    <button class="gold-btn">إضافة للسلة</button>
-                </div>
+                <span class="badge">جديد</span>
+                <img src="https://i.ibb.co/DP9nGmzY/image.jpg" alt="Headphones">
+                <h3>طقم أورا السيجنتشر</h3>
+                <span class="price">2,850 ر.س</span>
+                <button class="gold-btn">إضافة للسلة</button>
             </div>
 
             <div class="product-card">
-                <div class="badge">جديد</div>
-                <img src="https://i.ibb.co/r2Lf2bzp/image.jpg" alt="AURA Watch">
-                <div class="product-info">
-                    <h3>ساعة أورا الذكية - الإصدار المحدود</h3>
-                    <span class="price">1,950 ر.س</span>
-                    <button class="gold-btn">إضافة للسلة</button>
-                </div>
+                <span class="badge">جديد</span>
+                <img src="https://i.ibb.co/r2Lf2bzp/image.jpg" alt="Watch">
+                <h3>ساعة أورا الذكية</h3>
+                <span class="price">1,950 ر.س</span>
+                <button class="gold-btn">إضافة للسلة</button>
+            </div>
+
+            <div class="product-card">
+                <span class="badge">جديد</span>
+                <img src="https://i.ibb.co/RGwB6c6n/image.jpg" alt="Future Product">
+                <h3>إصدار أورا المحدود</h3>
+                <span class="price">3,200 ر.س</span>
+                <button class="gold-btn">إضافة للسلة</button>
             </div>
 
         </div>
-    </div>
+    </section>
 
 </body>
 </html>
