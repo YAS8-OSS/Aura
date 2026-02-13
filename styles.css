@@ -1,71 +1,172 @@
-:root{
-  --color-bg:#0B0B0D;
-  --color-surface:#111214;
-  --color-gold:#D4AF37;
-  --color-gold-dark:#B8860B;
-  --color-white:#FFFFFF;
-  --color-muted:#BDBDBD;
-  --space:8px;
-  --radius:10px;
-  --transition:200ms ease;
-  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+/* --- AURA Luxury Store Master Stylesheet --- */
+
+/* 1. الإعدادات العامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  background:var(--color-bg);
-  color:var(--color-white);
-  -webkit-font-smoothing:antialiased;
-  line-height:1.45;
+body {
+    background-color: #050505; /* أسود عميق للفخامة */
+    color: #ffffff;
+    font-family: 'Times New Roman', serif; /* خط كلاسيكي فخم */
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* container */
-.container{max-width:1200px;margin:0 auto;padding:0 calc(var(--space) * 3)}
+/* 2. القائمة العلوية (Navigation) كما تظهر في تصميمك */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #000;
+    border-bottom: 1px solid #1a1a1a;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-/* NAV */
-.nav{position:sticky;top:0;backdrop-filter:blur(6px);z-index:40}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-.brand{display:flex;align-items:center;gap:12px}
-.logo-mark{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--color-gold);box-shadow:0 0 12px rgba(212,175,55,0.06)}
-.brand-name{font-weight:700;letter-spacing:6px}
-.links a{color:var(--color-muted);text-decoration:none;margin-inline:12px}
-.links a:hover{color:var(--color-white)}
-.icon-btn{background:transparent;border:1px solid transparent;color:var(--color-white);padding:8px;border-radius:8px;cursor:pointer}
+.logo {
+    font-size: 2.2rem;
+    letter-spacing: 8px;
+    color: #d4af37; /* ذهبي أورا المعتمد */
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
-/* HERO */
-.hero{padding:64px 0}
-.hero-inner{display:flex;gap:40px;align-items:center;flex-wrap:wrap}
-.hero-text{flex:1;min-width:320px}
-.hero h1{font-size:48px;margin:0 0 8px;letter-spacing:6px}
-.lead{color:var(--color-muted);margin:0 0 20px}
-.ctas{display:flex;gap:12px}
-.btn{display:inline-block;padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:600;transition:var(--transition)}
-.btn.primary{background:linear-gradient(180deg,var(--color-gold),var(--color-gold-dark));color:#0B0B0D}
-.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--color-white)}
+nav ul {
+    display: flex;
+    list-style: none;
+}
 
-/* HERO MEDIA placeholder */
-.hero-media{width:420px;height:320px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px}
-.product-shot{width:90%;height:80%;display:flex;align-items:center;justify-content:center;border-radius:8px;border:1px dashed rgba(255,255,255,0.03);color:var(--color-muted)}
+nav ul li {
+    margin: 0 20px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
 
-/* PRODUCTS */
-.products{padding:48px 0}
-.products h2{margin:0 0 20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:var(--color-surface);border-radius:12px;padding:14px;transition:transform var(--transition), box-shadow var(--transition);overflow:hidden}
-.card .img{height:160px;border-radius:8px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center;color:var(--color-muted)}
-.card:hover{transform:translateY(-8px);box-shadow:0 10px 30px rgba(0,0,0,0.6);border:1px solid rgba(212,175,55,0.16)}
-.meta{padding-top:12px}
-.meta h3{margin:0 0 6px;font-size:16px}
-.price{color:var(--color-gold);font-weight:700}
+nav ul li:hover {
+    color: #d4af37;
+}
 
-/* FOOTER */
-.site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:24px 0;margin-top:48px;color:var(--color-muted)}
-.site-footer .container{display:flex;justify-content:space-between;align-items:center}
+/* 3. قسم الـ Hero (الواجهة الرئيسية) */
+.hero {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
 
-/* Responsive */
-@media (max-width:900px){
-  .hero-inner{flex-direction:column-reverse}
-  .hero-media{width:100%}
+.hero-image-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.main-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4); /* تعتيم لإبراز النص */
+    transition: transform 2s ease;
+}
+
+.hero:hover .main-hero-img {
+    transform: scale(1.1); /* حركة زووم هادئة */
+}
+
+.hero h1 {
+    font-size: 4rem;
+    background: linear-gradient(to right, #d4af37, #f4e0af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+/* 4. شبكة المنتجات (Product Grid) */
+.container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: #0f0f0f;
+    border: 1px solid #1a1a1a;
+    padding: 20px;
+    text-align: center;
+    transition: 0.5s ease;
+    position: relative;
+}
+
+.product-card:hover {
+    border-color: #d4af37;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15); /* هالة ذهبية */
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    filter: grayscale(20%);
+    transition: 0.5s;
+}
+
+.product-card:hover img {
+    filter: grayscale(0%);
+}
+
+/* 5. الأزرار (Buttons) */
+.gold-btn {
+    padding: 12px 35px;
+    background: transparent;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.4s;
+    margin-top: 20px;
+}
+
+.gold-btn:hover {
+    background: #d4af37;
+    color: #000;
+}
+
+/* 6. تأثيرات إضافية للفخامة */
+.price {
+    color: #d4af37;
+    font-size: 1.5rem;
+    display: block;
+    margin: 15px 0;
+}
+
+/* تخصيص الـ Scrollbar ليكون متناسق مع المتجر */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d4af37;
 }
