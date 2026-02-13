@@ -3,48 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AURA | التقنية بفخامة</title>
+    <title>AURA | فخامة التقنية</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* إضافات سريعة لضمان تباعد الأقسام */
+        .section-title {
+            text-align: center;
+            color: #d4af37;
+            letter-spacing: 4px;
+            margin: 60px 0 30px;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
+
     <nav>
         <div class="logo">AURA</div>
         <ul>
             <li>الرئيسية</li>
-            <li>المنتجات</li>
             <li>المجموعات</li>
             <li>عن AURA</li>
             <li>الدعم</li>
         </ul>
         <div class="nav-icons">
-            <span>🔍</span>
-            <span>🛒</span>
+            <span style="cursor:pointer; margin-left: 15px;">🔍</span>
+            <span style="cursor:pointer;">🛒</span>
         </div>
     </nav>
 
     <section class="hero">
         <div class="hero-image-container">
-            <img src="https://i.ibb.co/RGwB6c6n/image.jpg" alt="AURA Premium Headphones" class="main-hero-img">
+            <img src="https://i.ibb.co/RGwB6c6n/image.jpg" alt="AURA Welcome Image" class="main-hero-img">
         </div>
-        
         <div class="hero-content">
-            <h1>حيث تلتقي التقنية بالأناقة</h1>
-            <p>اكتشف الجيل الجديد من الأجهزة الإلكترونية المصممة لتعكس ذوقك الرفيع.</p>
-            <button class="gold-btn">تسوق المجموعة الآن</button>
+            <h1>AURA</h1>
+            <p>حيث تلتقي التقنية بالأناقة</p>
+            <button class="gold-btn">اكتشف المجموعة</button>
         </div>
     </section>
 
-    <section class="features container">
+    <main class="container">
+        <h2 class="section-title">الإصدارات الحصرية</h2>
+        
         <div class="product-grid">
+            
             <div class="product-card">
-                <h3>جودة استثنائية</h3>
-                <p>نختار منتجاتنا من أفخم الخامات العالمية.</p>
+                <div style="position: absolute; top: 15px; left: 15px; background: #d4af37; color: #000; padding: 2px 12px; font-size: 0.8rem; font-weight: bold; border-radius: 2px;">
+                    جديد
+                </div>
+                
+                <img src="https://i.ibb.co/DP9nGmzY/image.jpg" alt="AURA Headphone Set">
+                
+                <div class="product-info">
+                    <h3 style="margin-top: 15px;">طقم أورا السيجنتشر</h3>
+                    <p style="color: #888; font-size: 0.9rem; margin: 10px 0;">سماعة الرأس الاحترافية مع صندوق الاقتناء وكابل الشحن.</p>
+                    <span class="price">2,850 ر.س</span>
+                    <button class="gold-btn" style="width: 100%;">إضافة للسلة</button>
+                </div>
             </div>
-            <div class="product-card">
-                <h3>ذكاء اصطناعي</h3>
-                <p>مساعد "أورا" الذكي يختار لك ما يناسبك.</p>
+
+            <div class="product-card" style="display: flex; align-items: center; justify-content: center; border-style: dashed; opacity: 0.5;">
+                <p>قريباً: ساعة أورا الذكية</p>
             </div>
+
         </div>
-    </section>
+    </main>
+
+    <footer style="text-align: center; padding: 40px; border-top: 1px solid #1a1a1a; margin-top: 100px; color: #555;">
+        <p>© 2026 AURA LUXURY TECH. جميع الحقوق محفوظة.</p>
+    </footer>
+
 </body>
 </html>
