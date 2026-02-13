@@ -5,129 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AURA | فخامة التقنية</title>
     <style>
-        /* إعدادات الخلفية والخطوط لتعود كما في التصميم الأصلي */
+        /* التنسيق الأساسي للمتجر */
         body {
             background-color: #050505; /* الأسود الفخم */
             color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0; padding: 0;
         }
 
-        /* تنظيم القائمة العلوية */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            background-color: #000;
-            border-bottom: 1px solid #1a1a1a;
-        }
-
-        .logo {
-            font-size: 2rem;
-            letter-spacing: 5px;
-            color: #d4af37; /* الذهبي */
-            font-weight: bold;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav ul li {
-            color: #fff;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: 0.3s;
-        }
-
-        nav ul li:hover { color: #d4af37; }
-
-        /* تنسيق قسم الصورة الرئيسية (Hero) */
-        .hero {
-            position: relative;
-            height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* تصغير عنوان القسم ليكون أكثر رقي */
+        .section-title {
             text-align: center;
-            background: url('https://i.ibb.co/RGwB6c6n/image.jpg') no-repeat center center/cover;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.6); /* تعتيم الصورة لإبراز النص */
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin: 0;
             color: #d4af37;
+            font-size: 1.1rem; 
+            letter-spacing: 3px;
+            margin: 50px 0 30px;
+            text-transform: uppercase;
+            font-weight: 300;
         }
 
-        /* تنسيق شبكة المنتجات بشكل منظم */
-        .container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 20px;
-        }
+        .container { max-width: 1200px; margin: auto; padding: 20px; }
 
+        /* تنظيم شبكة المنتجات */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            gap: 30px;
         }
 
         .product-card {
             background: #0f0f0f;
             border: 1px solid #1a1a1a;
-            padding: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.4s;
             text-align: center;
             position: relative;
-            transition: 0.4s;
-            border-radius: 8px;
-            overflow: hidden;
         }
 
         .product-card:hover {
             border-color: #d4af37;
-            transform: translateY(-10px);
+            transform: translateY(-5px);
         }
 
+        /* تحسين عرض الصور لمنع التمدد والحفاظ على الجودة */
         .product-card img {
             width: 100%;
-            height: auto;
-            display: block;
+            height: 300px;
+            object-fit: contain; 
+            background: #000;
         }
 
-        .product-info {
-            padding: 20px;
-        }
-
-        .price {
-            color: #d4af37;
-            font-size: 1.4rem;
-            display: block;
-            margin: 15px 0;
-        }
+        .product-info { padding: 20px; }
+        .product-info h3 { font-size: 1rem; margin: 10px 0; color: #fff; }
+        .price { color: #d4af37; font-size: 1.2rem; display: block; margin-bottom: 15px; }
 
         .gold-btn {
-            padding: 10px 25px;
             background: transparent;
             border: 1px solid #d4af37;
             color: #d4af37;
+            padding: 10px;
             cursor: pointer;
             width: 100%;
+            font-weight: bold;
             transition: 0.3s;
         }
 
@@ -142,51 +82,39 @@
             right: 15px;
             background: #d4af37;
             color: #000;
-            padding: 5px 12px;
-            font-size: 0.8rem;
+            padding: 3px 10px;
+            font-size: 0.7rem;
             font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">AURA</div>
-        <ul>
-            <li>الرئيسية</li>
-            <li>المنتجات</li>
-            <li>المجموعات</li>
-            <li>عن AURA</li>
-            <li>الدعم</li>
-        </ul>
-        <div class="nav-icons">
-            <span style="margin-left:15px;">🔍</span>
-            <span>🛒</span>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>AURA</h1>
-            <p>اكتشفي الجيل القادم من الفخامة التقنية</p>
-        </div>
-    </section>
-
     <div class="container">
-        <h2 style="text-align: center; color: #d4af37; margin-bottom: 40px;">الإصدارات الحصرية</h2>
+        <h2 class="section-title">الإصدارات الحصرية</h2>
         
         <div class="product-grid">
+            
             <div class="product-card">
-                <div class="badge">جديد</div>
-                <img src="https://i.ibb.co/DP9nGmzY/image.jpg" alt="AURA Headset Set">
+                <div class="badge">الأكثر مبيعاً</div>
+                <img src="https://i.ibb.co/DP9nGmzY/image.jpg" alt="AURA Headphones">
                 <div class="product-info">
-                    <h3>طقم أورا السيجنتشر</h3>
-                    <p style="color: #888;">سماعة الرأس مع صندوق الحفظ وكابل الشحن المطور.</p>
+                    <h3>طقم أورا السيجنتشر (سماعات)</h3>
                     <span class="price">2,850 ر.س</span>
-                    <button class="gold-btn">أضف إلى السلة</button>
+                    <button class="gold-btn">إضافة للسلة</button>
                 </div>
             </div>
+
+            <div class="product-card">
+                <div class="badge">جديد</div>
+                <img src="https://i.ibb.co/r2Lf2bzp/image.jpg" alt="AURA Watch">
+                <div class="product-info">
+                    <h3>ساعة أورا الذكية - الإصدار المحدود</h3>
+                    <span class="price">1,950 ر.س</span>
+                    <button class="gold-btn">إضافة للسلة</button>
+                </div>
+            </div>
+
         </div>
     </div>
 
