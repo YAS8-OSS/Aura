@@ -1,86 +1,50 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>AURA — متجر إلكتروني فاخر</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA | التقنية بفخامة</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <div class="brand">
-        <div class="logo-mark" aria-hidden="true"></div>
-        <span class="brand-name">AURA</span>
-      </div>
-      <nav class="links" aria-label="رئيسية">
-        <a href="#">المنتجات</a>
-        <a href="#">المجموعات</a>
-        <a href="#">عن AURA</a>
-        <a href="#">الدعم</a>
-      </nav>
-      <div class="actions">
-        <button class="icon-btn">🔍</button>
-        <button class="icon-btn">🛒</button>
-      </div>
-    </div>
-  </header>
+    <nav>
+        <div class="logo">AURA</div>
+        <ul>
+            <li>الرئيسية</li>
+            <li>المنتجات</li>
+            <li>المجموعات</li>
+            <li>عن AURA</li>
+            <li>الدعم</li>
+        </ul>
+        <div class="nav-icons">
+            <span>🔍</span>
+            <span>🛒</span>
+        </div>
+    </nav>
 
-  <main>
     <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <h1>AURA</h1>
-          <p class="lead">Electronics redefined — تصميم فاخر، أداء متفوق.</p>
-          <div class="ctas">
-            <a class="btn primary" href="#">تسوّق الآن</a>
-            <a class="btn ghost" href="#">المجموعات</a>
-          </div>
+        <div class="hero-image-container">
+            <img src="https://i.ibb.co/RGwB6c6n/image.jpg" alt="AURA Premium Headphones" class="main-hero-img">
         </div>
-        <div class="hero-media" aria-hidden="true">
-          <!-- placeholder image -->
-          <div class="product-shot">صورة المنتج</div>
+        
+        <div class="hero-content">
+            <h1>حيث تلتقي التقنية بالأناقة</h1>
+            <p>اكتشف الجيل الجديد من الأجهزة الإلكترونية المصممة لتعكس ذوقك الرفيع.</p>
+            <button class="gold-btn">تسوق المجموعة الآن</button>
         </div>
-      </div>
     </section>
 
-    <section class="products container" aria-labelledby="featured-title">
-      <h2 id="featured-title">منتجات مختارة</h2>
-      <div class="grid">
-        <article class="card">
-          <div class="img">منتج 1</div>
-          <div class="meta">
-            <h3>Headphones X1</h3>
-            <p class="price">2,199 ر.س</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="img">منتج 2</div>
-          <div class="meta">
-            <h3>Speaker Aura</h3>
-            <p class="price">1,499 ر.س</p>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="img">منتج 3</div>
-          <div class="meta">
-            <h3>Smart Watch</h3>
-            <p class="price">899 ر.س</p>
-          </div>
-        </article>
-      </div>
+    <section class="features container">
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>جودة استثنائية</h3>
+                <p>نختار منتجاتنا من أفخم الخامات العالمية.</p>
+            </div>
+            <div class="product-card">
+                <h3>ذكاء اصطناعي</h3>
+                <p>مساعد "أورا" الذكي يختار لك ما يناسبك.</p>
+            </div>
+        </div>
     </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-brand">AURA © 2026</div>
-      <div class="footer-links">الشروط · الخصوصية · تواصل</div>
-    </div>
-  </footer>
 </body>
 </html>
